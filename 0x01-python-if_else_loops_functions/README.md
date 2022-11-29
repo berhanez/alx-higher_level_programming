@@ -3,4 +3,4 @@
 
 ## This directory contains tasks done as part of ALX - SE program Second Sprint - Python
 
-### Tasks include utilizaaion of python tools such as if - else, loops and functions.
+### Tasks include utilizaaion of python tools such as if - else, loops and functions.Run programs by either ./<program name> or python <program name>

@@ -20,6 +20,8 @@ where x is the task number.
 1-square.py - Square with size
 ```
 	A class Square that defines a square by: (based on 0-square.py).
+	Private instance attribute: size
+	Instantiation with size (no type/value verification)
 ```
 2-square.py - Size validation
 ```

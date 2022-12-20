@@ -15,21 +15,25 @@ where x is the task number.
 ```
 0-square.py - my first square
 ```
-	An empty class Square that defines a square.
+	* An empty class Square that defines a square.
 ```
 1-square.py - Square with size
 ```
-	A class Square that defines a square by: (based on 0-square.py).
-	Private instance attribute: size
-	Instantiation with size (no type/value verification)
+	* A class Square that defines a square by: (based on 0-square.py).
+	* Private instance attribute: size
+	* Instantiation with size (no type/value verification)
 ```
 2-square.py - Size validation
 ```
-	A class Square that defines a square by: (based on 1-square.py).
+	* A class Square that defines a square by: (based on 1-square.py).
 ```
 3-square.py - Area of a square
 ```
-	A class Square that defines a square by: (based on 2-square.py).
+	* A class Square that defines a square by: (based on 2-square.py).
+	* Private instance attribute: size
+	* Instantiation with optional size: def __init__(self, size=0):
+		* size must be an integer, otherwise raise a TypeError exception with the message size must be an integer
+		* if size is less than 0, raise a ValueError exception with the message size must be >= 0
 ```
 4-square.py - Access and update private attribute
 ```

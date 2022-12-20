@@ -23,7 +23,7 @@ class Square:
 
     @position.setter
     def position(self, size):
-        if (not isinstance(size, tuple) or 
+        if (not isinstance(size, tuple) or
                 len(size) != 2 or
                 not all(isinstance(n, int) for n in size) or
                 not all(n >= 0 for n in size)):

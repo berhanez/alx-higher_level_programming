@@ -10,12 +10,12 @@ class MagicClass:
         """The initialization of circle parameters."""
         self.__radius = 0
         if type(radius) is not int and type(radius) is not float:
-            raise TypeError("THE RADIUS MUST BE A DIGIT")
+            raise TypeError("radius must be a number")
         self.__radius = radius
 
     def area(self):
         """GET AREA of cicle equivalent to = (pi)(r)(r)."""
-        return (math.pi * self.__radius ** 2)
+        return (math.pi * (self.__radius ** 2))
 
     def circumference(self):
         """GET Circumference of circle defined as  = 2(pi)(r)"""

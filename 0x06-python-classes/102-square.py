@@ -12,6 +12,7 @@ class Square:
 
     @size.setter
     def size(self, value):
+        """Condition to ensure size is an integer."""
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         elif value < 0:
@@ -19,23 +20,30 @@ class Square:
         self.__size = value
 
     def area(self):
+        """TO return area of the square."""
         return (self.__size * self.__size)
 
     """Defining for ==, !=, <, >, <=, >= cases"""
     def __eq__(self, other):
+        """Defining for == condition of squares."""
         return self.area() == other.area()
 
     def __ne__(self, other):
+        """Defining for != condition of squares."""
         return self.area() != other.area()
 
     def __lt__(self, other):
+        """Defining for < condition of squares."""
         return self.area() < other.area()
 
     def __le__(self, other):
+        """Defining for <= condition of squares."""
         return self.area() <= other.area()
 
     def __gt__(self, other):
+        """Defining for > condition of squares."""
         return self.area() > other.area()
 
     def __ge__(self, other):
+        """Defining for >= condition of squares."""
         return self.area() >= other.area()

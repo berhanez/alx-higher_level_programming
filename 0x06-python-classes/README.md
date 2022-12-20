@@ -75,7 +75,17 @@ where x is the task number.
 ```
 6-square.py - Coordinates of a square
 ```
-	A class Square that defines a square by: (based on 5-square.py).	
+	* A class Square that defines a square by: (based on 5-square.py).
+	* Private instance attribute: size
+		* property def size(self): to retrieve it
+		* property setter def size(self, value): to set it 
+	* Private instance attribute: position:
+		* property def position(self): to retrieve it
+		* property setter def position(self, value): to set it
+	* Instantiation with optional size and optional position: def __init__(self, size=0, position=(0, 0)):
+	* Public instance method: def area(self): that returns the current square area
+	* Public instance method: def my_print(self): that prints in stdout the square with the character #:
+
 
 
 ## :blue_book: Author

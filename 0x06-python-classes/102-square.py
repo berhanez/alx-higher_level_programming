@@ -1,6 +1,9 @@
 #!/usr/bin/python3
-class Square:
+"""Square class defined."""
 
+
+class Square:
+    """Square is created/represented."""
     def __init__(self, size=0):
         """new square initialized"""
         self.size = size
@@ -23,7 +26,6 @@ class Square:
         """TO return area of the square."""
         return (self.__size * self.__size)
 
-    """Defining for ==, !=, <, >, <=, >= cases"""
     def __eq__(self, other):
         """Defining for == condition of squares."""
         return self.area() == other.area()

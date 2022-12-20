@@ -1,15 +1,22 @@
 #!/usr/bin/python3
+"""Square class defined."""
+
+
 class Square:
+    """Square is made."""
     def __init__(self, size=0, position=(0, 0)):
+        """Square is initialized."""
         self.size = size
         self.position = position
 
     @property
     def size(self):
+        """Set size of square."""
         return self.__size
 
     @size.setter
     def size(self, size):
+        """Tests if size is a positive integer"""
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
         elif size < 0:
@@ -35,7 +42,7 @@ class Square:
         return self.__size ** 2
 
     def my_print(self):
-        """ ### Square printer """
+        """ ### Square printer. """
         if self.__size == 0:
             print("")
             return

@@ -1,21 +1,29 @@
 #!/usr/bin/python3
+"""Calss definition for singly linked list(SLL)."""
+
+
 class Node:
+    """Node representation in SLL."""
     def __init__(self, data, next_node=None):
+        """New node initialized."""
         self.data = data
         self.next_node = next_node
 
     @property
     def data(self):
+        """Get the data of node."""
         return (self.__data)
 
     @data.setter
     def data(self, value):
+        """Value check for integer."""
         if type(value) is not int:
             raise TypeError("data must be an integer")
         self.__data = value
 
     @property
     def next_node(self):
+        """Get data of the next node"""
         return (self.__next_node)
 
     @next_node.setter

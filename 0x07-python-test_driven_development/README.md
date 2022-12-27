@@ -9,7 +9,7 @@
 * **0. Integers addition**
   * [0-add_integer.py](./0-add_integer.py): Python function that returns the integer addition
   of two numbers.
-  * PROTOTYPE: ''' xx '''
+  * PROTOTYPE: ``` xx ```
   
 * **1. Divide a matrix**
   * [2-matrix_divided.py](./2-matrix_divided.py): Python function that divides all

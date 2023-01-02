@@ -51,6 +51,7 @@ class Rectangle:
     def perimeter(self):
         """ Returns the perimeter of the Rectangle. """
         return (self.height * 2) + (self.width * 2)
+
     def __str__(self):
         """  Return a string representation of Rectangle using '#' """
         if self.width is 0 or self.height is 0:

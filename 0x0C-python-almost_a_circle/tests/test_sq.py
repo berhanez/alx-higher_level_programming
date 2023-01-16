@@ -5,14 +5,21 @@ Unittest classes:
     TestSquare_order_of_initialization, TestSquare_area, 
     TestSquare_stdout, TestSquare_update_args, 
     TestSquare_update_kwargs, TestSquare_to_dictionary"""
-import unittest
 import io
 import sys
+import unittest
+from models.base import Base
+from models.rectangle import Rectangle
 from models.square import Square
-
 
 class TestSquare_instantiation(unittest.TestCase):
     """Unittests for testing instantiation of the Square class."""
+
+    def test_is_base(self):
+        self.assertIsInstance(Square(10), Base)
+
+    def test_is_rectangle(self):
+        self.assertIsInstance(Square(10), Rectangle)
 
     def test_no_args(self):
         with self.assertRaises(TypeError):

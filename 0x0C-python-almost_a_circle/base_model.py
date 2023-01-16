@@ -2,7 +2,7 @@
 """Defining a base model class."""
 import json
 import csv
-
+import turtle
 
 class Base:
     """Represent the base model. """
@@ -20,7 +20,7 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """Return the JSON serialization of a list of dicts. """
-        if list_dictionaries is None or len(list_dictionaries) == 0:
+        if list_dictionaries is None or list_dictionaries == []
             return "[]"
         return json.dumps(list_dictionaries)
 
@@ -28,12 +28,12 @@ class Base:
     def save_to_file(cls, list_objs):
         """Write the JSON serialization of a list of objects to a file."""
         filename = cls.__name__ + ".json"
-        with open(filename, "w") as f:
+        with open(filename, "w") as jsonfile:
             if list_objs is None:
-                f.write("")
+                jsonfile.write("[]")       
             else:
                 list_dicts = [o.to_dictionary() for o in list_objs]
-                f.write(Base.to_json_string(list_dicts))
+                jsonfile.write(Base.to_json_string(list_dicts))
 
     @staticmethod
     def from_json_string(json_string):
@@ -45,9 +45,10 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """class instantied from a dictionary of attributes."""
-        new = cls(7, 7)
-        new.update(**dictionary)
-        return new
+        if dictionary and dictionary != {}:
+￼            new = cls(7, 7, id="dummy")
+￼            new.update(**dictionary)
+￼            return new
 
     @classmethod
     def load_from_file(cls):
@@ -56,8 +57,8 @@ class Base:
         """
         filename = str(cls.__name__) + ".json"
         try:
-            with open(filename, "r") as f:
-                list_dicts = Base.from_json_string(f.read())
+            with open(filename, "r") as jsonfile:
+                list_dicts = Base.from_json_string(jsonfile.read())
                 return [cls.create(**d) for d in list_dicts]
         except IOError:
             return []
@@ -67,8 +68,8 @@ class Base:
         """Write the CSV serialization of a list of objects to a file."""
         filename = cls.__name__ + ".csv"
         with open(filename, "w", newline="") as csvfile:
-            if list_objs is None:
-                f.write("")
+            if list_objs is None or list_objs == []:
+                csvfile.write("[]")
             else:
                 if cls.__name__ == "Rectangle":
                     fieldnames = ["id", "width", "height", "x", "y"]
@@ -95,3 +96,41 @@ class Base:
                 return [cls.create(**d) for d in list_dicts]
         except IOError:
             return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """Draw Rectangles and Squares using the turtle module.
+            list_rectangles (list): A list of Rectangle objects to draw.
+            list_squares (list): A list of Square objects to draw."""
+        turt = turtle.Turtle()
+        turt.screen.bgcolor("#b7312c")
+        turt.pensize(3)
+        turt.shape("turtle")
+
+        turt.color("#ffffff")
+        for rect in list_rectangles:
+            turt.showturtle()
+            turt.up()
+            turt.goto(rect.x, rect.y)
+            turt.down()
+            for i in range(2):
+                turt.forward(rect.width)
+                turt.left(90)
+                turt.forward(rect.height)
+                turt.left(90)
+            turt.hideturtle()
+
+        turt.color("#b5e3d8")
+        for sq in list_squares:
+            turt.showturtle()
+            turt.up()
+            turt.goto(sq.x, sq.y)
+            turt.down()
+            for i in range(2):
+                turt.forward(sq.width)
+                turt.left(90)
+                turt.forward(sq.height)
+                turt.left(90)
+            turt.hideturtle()
+
+        turtle.exitonclick()

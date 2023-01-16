@@ -91,13 +91,15 @@ class Rectangle(Base):
                 - 3rd argument represent height attribute
                 - 4th argument represents x attribute
                 - 5th argument represents y attribute
-            **kwargs (dict): New key/value pairs of attributes.
-        """
+            **kwargs (dict): New key/value pairs of attributes."""
         if args and len(args) != 0:
             a = 0
             for arg in args:
                 if a == 0:
-                    self.id = arg
+                    if arg is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = arg
                 elif a == 1:
                     self.width = arg
                 elif a == 2:
@@ -111,7 +113,10 @@ class Rectangle(Base):
         elif kwargs and len(kwargs) != 0:
             for k, v in kwargs.items():
                 if k == "id":
-                    self.id = v
+                     if v is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = v
                 elif k == "width":
                     self.width = v
                 elif k == "height":

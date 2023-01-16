@@ -46,8 +46,11 @@ class Base:
     def create(cls, **dictionary):
         """class instantied from a dictionary of attributes."""
         if dictionary and dictionary != {}:
-￼            new = cls(7, 7)
-￼            new.update(**dictionary)
+            if cls.__name__ == "Rectangle":
+                new = cls(1, 1)
+            else:
+                new = cls(1)
+             new.update(**dictionary)
 ￼            return new
 
     @classmethod
